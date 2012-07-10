@@ -1,0 +1,24 @@
+<h1>Editing parent</h1>
+
+<% form_for(@parent) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :asecret %><br />
+    <%= f.text_field :asecret %>
+  </p>
+  <p>
+    <%= f.label :atoken %><br />
+    <%= f.text_field :atoken %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @parent %> |
+<%= link_to 'Back', parents_path %>

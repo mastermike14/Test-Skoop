@@ -1,0 +1,9 @@
+page.replace :notice, replace_notice
+page.hide :notice
+page.visual_effect :appear, :notice
+page.replace dom_id(@group), :partial => 'group'
+page.visual_effect :appear, dom_id(@group)
+page.visual_effect :highlight, dom_id(@group)
+flash.discard
+
+page["group_form_#{@group.id}"].reset

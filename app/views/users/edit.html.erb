@@ -1,0 +1,19 @@
+<div id="index">
+
+<h2><%= @title %></h2>
+<%= error_messages_for 'user' %>
+<% form_for :user do |form| %>
+  <fieldset>
+    <legend>Email</legend>
+    <label for="email">Email:</label>
+    <%= form.text_field :email %>
+
+
+  <%= submit_tag "Update", :class => "submit" %>
+
+ </fieldset>
+<br />
+<%= link_to "Manage your parents", parents_path %>
+<% end %>
+
+</div>

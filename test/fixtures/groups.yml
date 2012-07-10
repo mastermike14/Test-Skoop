@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Ruby:
+  id: 1
+  name: ruby_twitter
+  owner: jacob
+  desc: on Rails
+  twitter_id: 1
+  atoken:
+  asecret:
+
+Python:
+  id: 2
+  name: null
+  owner: nobody
+  desc: Snake
+  twitter_id: 12

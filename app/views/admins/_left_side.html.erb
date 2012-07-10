@@ -1,0 +1,24 @@
+<div id="left_column">
+<fieldset>
+<ul>
+<li><%= link_to "Admin", admin_profile_path(@group.name) %></li>
+<li><%= link_to "Members", admins_users_path(@group.name) %> </li>
+<li><%= link_to "Direct Messages", direct_message_path(@group.name) %></li>
+</ul>
+</fieldset>
+
+<fieldset>
+ <label for="owner"><b>Teacher</b>:</label>
+ <%= @group.fullname_from_owner(@group.owner) %>
+</fieldset>
+ <fieldset>
+   <legend>Description</legend>
+    <%= @group.desc %>
+<br /><br />
+<b>Number of users: </b> <%= @group.users.count %>
+ </fieldset>
+<fieldset>
+<legend>Reset Group</legend>
+<%= link_to "Reset Group", reset_group_path(@group.id), :confirm => 'This action removes all users from the group and destroys all twitter associations. WARNING! This action can not be undone.', :method => :reset_group   %>
+</fieldset>
+</div>

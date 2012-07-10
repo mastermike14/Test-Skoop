@@ -1,0 +1,18 @@
+<div id="index">
+<%= display_flash %>
+<div id="hpf">
+<h1>Send a Message</h1>
+
+<% form_for :direct_msg do |f| %>
+
+Send an update to: <%= f.select :id, @users.map {|u| [u.full_name, u.id] }, :include_blank => true %><br />
+
+<%= f.label :message, "Message:" %><br />
+<%= f.text_area :body, :id => "message1", :cols => 60, :rows => 5 %><br />
+<%= f.submit "Submit" %>
+
+<% end %>
+
+</div></div>
+
+

@@ -1,0 +1,41 @@
+<div id="index">
+
+<%= display_flash %>
+
+<br /><div id="hpy">
+   <% form_tag groups_path, :method => 'get' do %>
+     <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Search", :name => nil %>
+     </p>
+   <% end %></div>
+ <div id="body">
+
+  <div id="hpl">
+  <h1>All Groups</h1>
+<center>
+   <table>
+     <tr>
+      <th>Description</th>
+      <th>Owner</th>
+      <th>Action</th>
+      <th>Status</th>
+     </tr>
+
+   <% @groups.each do |@group| %>
+      <%= render :partial => 'group' %>
+     <% end %>
+     <tr>
+      <td>
+         <div id="digg"> 
+          <%= will_paginate @groups %>
+         </div>
+       </td>
+      </tr>
+    </table>
+  <br /></center>
+ </div>
+
+</div>
+</div>
+

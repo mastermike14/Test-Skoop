@@ -1,0 +1,6 @@
+     <tr id="<%= dom_id(@group) %>">
+       <td><%=h @group.desc %></td>
+        <td><%=h @group.fullname_from_owner(@group.owner) %></td>
+       <td><%= link_to 'Show', profile_path(@group.name) %></td>
+        <td><div id="group_check_<%= @group.id %>"><%= group_checkbox(@group, group_url_path(@group)) %></div><%= spinner_image %></td> 
+    </tr>

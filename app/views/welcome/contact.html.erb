@@ -1,0 +1,41 @@
+<div id="index">
+<% if flash[:notice] %>
+     <div id="notice"><%= flash[:notice] %></div>
+      <% end %>
+     <div align="center"> <%= error_messages_for 'message' %> </div>
+<div id="hpf"><h2>Questions or Comments?&nbsp;&nbsp;Send us some mail!</h2>
+<p>Still concerned about setting up Skloop for your phone?  Want to make sure you signed up correctly?
+Interested in joining the Hyperstream Team to help improve Skloop?  Give us an e-mail and we'll be sure
+to help you to our fullest!<p>
+
+
+  <% form_for :contact do |form| -%>
+
+	<table class="contact">
+
+	<tr>
+	<td><strong>To:</strong></td>
+	<td>skloop@waukee.k12.ia.us</div></td>
+	</tr>
+	<tr>
+	<td><strong><div align="left">Name:</div></strong></td>
+	<td><%= form.text_field "name", :style => "font-family:Calibri" %></td>
+	</tr>
+	<tr>
+	<td><strong><div align="left">E-Mail</div></strong></td>
+	<td><%= form.text_field "email", :style => "font-family:Calibri" %></td>
+	</tr></table><table class="cont">
+	<tr>
+	<td><strong><div align="left">Comment</div></strong></td></tr>
+	<tr>
+	<td>
+	<%= form.text_area "body", :rows => 10, :cols => 70 %>
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<div align="right"><input type="submit" name="submit" value="Submit"></div></td>
+	</tr>
+	</table>
+<% end -%>
+</div></div>

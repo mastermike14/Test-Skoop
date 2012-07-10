@@ -1,0 +1,11 @@
+<p>Here you need to supply your user id. Your user id is the username that you use to login to the Waukee school network. It consists of your last name and your student id. (Ex. smith10000)</p><br />
+<% form_for @user, :url => {:action => 'update'} do |f| %>
+<%= error_messages_for :user %>
+<%= hidden_field_tag :direction, "next" %>
+<%= label_tag :uid, "User ID:" %><br />
+<%= f.text_field :uid %><br />
+<%= button_to_function "Previous",
+  "document.getElementById('direction').value = 'previous'; this.form.submit();" %>
+<%= submit_tag "Next" %>
+
+<% end %>

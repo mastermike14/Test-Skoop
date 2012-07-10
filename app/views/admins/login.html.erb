@@ -1,0 +1,21 @@
+<br />
+<div id="index">
+<%= display_flash %>
+<h3><div align="center">Staff Login</div></h3>
+<br />
+<% form_for :login do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password, "Password:" %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit "Login" %>
+  </p>
+
+<% end %>
+</div>

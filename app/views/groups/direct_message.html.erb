@@ -1,0 +1,15 @@
+<div id="index">
+<% flash.each do |key, msg| -%>
+    <div id="<%= key %>"><%= msg %></div>
+     <% end %>
+<div id="body">
+<h1> Send a direct message </h1>
+<% form_for :direct_message do |form| %>
+  <%= form.text_area :text, :id => "message1", :cols => 60, :rows => 5  %><br />
+  <%= form.submit "send" %>
+          
+ <% end %>
+
+</div></div>
+
+

@@ -1,0 +1,28 @@
+<div id="index">
+<% flash.each do |key, msg| -%>
+    <div id="<%= key %>"><%= msg %></div>
+     <% end %>
+<div id="hpf">
+<h1>Send a Message</h1>
+<% if own_groups.length > 0 %>
+<% form_for :message do |f| %>
+
+
+Send an update from 
+<% unless @group %>
+<%= f.select :id, own_groups.map {|g| [g.name, g.id] }, :include_blank => true %>
+<% else %>
+<%= f.select :id, @group.map {|g| [g.name, g.id] } %>
+<% end %>
+</font><br />
+<%= f.label :message, "Message:" %><br />
+<%= f.text_area :body, :id => "message1", :cols => 60, :rows => 5 %><br />
+<%= f.submit "Submit" %>
+
+<% end %>
+<% else %>
+<p>You have not created any groups yet!<br /><br />
+<%= link_to "Create one here", new_admin_path %></p>
+<% end %>
+
+</div></div>

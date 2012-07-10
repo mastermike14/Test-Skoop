@@ -1,0 +1,13 @@
+<h3>Please Read carefully!</h3>
+<p>Any and all conditions in the Privacy Statement and the Terms of Use are permanent and may change with time.
+Skloop is not responsible for alerting you or other customers to changes that may be made.<br />
+Do you agree to the terms:</p><br />
+<% form_tag :action => 'update' do %>
+<%= hidden_field_tag :direction, "next" %>
+<%= radio_button_tag :agree, "yes" %>Yes<br />
+<%= radio_button_tag :agree, "no", :checked => true %>No<br />
+<%= button_to_function "Previous",
+  "document.getElementById('direction').value = 'previous'; this.form.submit();" %>
+<%= submit_tag "Next" %>
+<% end %>
+

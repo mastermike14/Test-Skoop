@@ -1,0 +1,32 @@
+<div id="index">
+
+<p>
+  <b>Twitter Name:</b>
+  <%=h @group.name %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%=h @group.owner %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @group.desc %>
+</p>
+
+<p>
+  <b>Twitter ID:</b>
+  <%=h @group.twitter_id %>
+</p>
+
+<p>
+  <b># of Users:</b>
+  <%=h @group.users.count %>
+</p>
+
+
+<%= link_to 'Back', groups_path %> |
+<%= link_to 'Join', join_group_path, :id => @group.id %>
+
+</div>

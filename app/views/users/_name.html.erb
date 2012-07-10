@@ -1,0 +1,13 @@
+<p>Here you need to supply your first and last name. This is to verify that the account exists. Remember to supply your full first name if you are having errors.</p><br />
+<% form_for @user, :url => {:action => 'update'} do |u| %>
+	<%=error_messages_for :user %>
+<%= hidden_field_tag :direction, "next" %>
+<%= label_tag :firstname, "First name:"%><br />
+<%= u.text_field :firstname %><br />
+<%= label_tag:lastname, "Last name:" %><br />
+<%= u.text_field :lastname %><br/>
+<%= button_to_function "Previous",
+  "document.getElementById('direction').value = 'previous'; this.form.submit();" %>
+<%= submit_tag "Next" %>
+
+<% end %>

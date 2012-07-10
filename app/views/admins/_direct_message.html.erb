@@ -1,0 +1,16 @@
+
+<div class="twitter_container">
+<% for status in @status %>
+<div class="twitter_status">
+<%= image_tag(status.sender.profile_image_url, :class => 'twitter_image') %>
+<%= link_to ( User.find_by_username(status.sender.screen_name).full_name ), ("http://twitter.com/#{status.sender.screen_name}") %>
+
+<%= status.text %><br />
+<div class="twitter_posted_at" ><strong>Posted On: </strong><%= (status.created_at) %></div>
+
+</div>
+<% end %>
+</div>
+<% if @status.length < 1 %>
+<p>There are no tweets to display.</p>
+<% end %>

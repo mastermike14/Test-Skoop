@@ -1,0 +1,20 @@
+<div id="index">
+<p>
+  <b>Email:</b>
+  <%=h @parent.email %>
+</p>
+
+<p>
+  <b>Asecret:</b>
+  <%=h @parent.asecret %>
+</p>
+
+<p>
+  <b>Atoken:</b>
+  <%=h @parent.atoken %>
+</p>
+
+
+<%= link_to 'Edit', edit_parent_path(@parent) %> |
+<%= link_to 'Back', parents_path %>
+</div>

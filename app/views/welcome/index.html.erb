@@ -1,0 +1,29 @@
+<div id="index"> <div id="body">
+<div id="hpt"><h3>About Skloop</h3>
+
+	<p><br /> To sign up all you need is your Waukee student Id(Lastname + id number), a student password, and a twitter account. If you do not have a twitter account you can create one <a href="http://twitter.com/signup">here</a>. <br /><br /> To log in just enter your student ID and password.</p>
+</div>
+
+	<div id="hps">
+<% flash.each do |key, msg| -%>
+    <div id="<%= key %>"><%= msg %></div>
+     <% end %>
+
+			<h1 align="center">Sign Up</h1>
+    <br />
+					<%= render :partial => '/users/form' %>
+
+</div>
+
+	<div id="hpo"><%= image_tag 'hyp.png', :title => 'Hyperstream', :alt => 'HyperStream', :border => 0 %>
+
+		<p>HyperStream is a collaboration between
+
+			Iowa technology companies and Iowa schools to raise awareness of
+
+			technology career opportunities through interactive projects, clubs,
+
+			contests, and mentoring by technology professionals.</p>
+
+</div>
+</div></div></div>

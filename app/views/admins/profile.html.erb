@@ -1,0 +1,13 @@
+<%= display_flash %>
+<div id="amp">
+<div id="main">
+<%= render :partial => 'left_side' %>
+<div id="main_content">
+<h2><%= "#{@group.name.capitalize}" %></h2>
+<fieldset><legend>Displaying 5 Most Recent Updates</legend>
+<%= render :partial => 'status' %>
+</fieldset>
+</div>
+</div>
+</div></div>
+

@@ -1,0 +1,32 @@
+<div id="index">
+<% if flash[:notice] %>
+<div id="notice"><%= flash[:notice] %></div>
+<% elsif flash[:error] %>
+<div id="error"><%= flash[:error] %></div>
+<% end %>
+<div id="body">
+<div id="noth">
+<a href="parents/new"><%= image_tag 'parent.png', :title => 'Add A New Parent', :alt => 'New Parent', :height => 50 , :width => 100 %></a>
+</div>
+<div id="hptt">
+<h1>Listing parents</h1>
+<center>
+<% if @user.parents.count > 0 %>
+<table>
+  <tr>
+    <th>Email</th>
+    <th>Options</th>
+  </tr>
+  <% @parents.each do |parent| %>
+  <tr>
+    <td><%=h parent.email %></td>
+    <td><%= link_to 'Remove', parent, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+<% else %>
+You do not have any parents added yet, add one <%= link_to "here", new_parent_url %>
+<% end %>
+</table>
+</center>
+</div>
+</div>

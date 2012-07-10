@@ -1,0 +1,17 @@
+<div id="flashprofile">
+<div id="flash">
+<div>
+<% flash.each do |key, msg| -%>
+    <div id="<%= key %>"><%= msg %> <a onclick="Effect.toggle('flash', 'appear'); return false;" href="#">Hide This Message</a>
+</div>
+    <% end %>
+</div></div></div>
+<div id="amp">
+<div id="main">
+  <%= render :partial => 'left_side' %>
+<div id="students">
+<%= render :partial => 'users' %>
+</div>
+</div>
+</div>
+</div></div>

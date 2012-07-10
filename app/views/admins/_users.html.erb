@@ -1,0 +1,14 @@
+<fieldset>
+<legend>Students</legend>
+
+
+<table>
+<% @users.each do |user| %>
+ <tr id="<%= dom_id(@group) %>">
+   <td><%=h user.full_name %></td> <td><%= link_to "Direct Message", direct_message_path(@group.name) %>&nbsp;<%= link_to_remote "Remove from group", :url => { :action => 'remove_user' , :id => user.id }, :with => "'group=#{@group.id}'", :confirm => "Are you sure?" %></div></td>
+<% end %>
+ </tr>
+</table>
+<%= will_paginate @users %>
+
+</fieldset>

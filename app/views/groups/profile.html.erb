@@ -1,0 +1,24 @@
+<div id="index">
+<% if flash[:notice] %>
+     <div id="notice"><%= flash[:notice] %></div>
+  <% end %>
+<div id="body">
+<h2> <%= "#{@group.name.capitalize}" %></h2>
+<fieldset>
+ <legend><strong>Group Owner</strong></legend>
+ <%= @group.fullname_from_owner(@group.owner) %>
+</fieldset>
+<fieldset>
+   <legend><strong>Description</strong></legend>
+    <%= @group.desc %>
+
+ </fieldset>
+<fieldset>
+  <legend><strong>Actions</strong></legend>
+   <% if @user.assigned_to?(@group) %>
+     <%= link_to "Leave", remove_group_path(@group), :confirm => "Are you sure you want to leave this group?", :method => :remove %> | <%= link_to "Direct Message", user_direct_message_path(@group.name) %> 
+   <% else %>
+    <%= link_to "Join", add_group_path(@group), :confirm => "Are you sure you want to join this group?", :method => :add %>
+  <% end %>
+
+</div></div>

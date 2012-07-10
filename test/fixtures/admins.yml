@@ -1,0 +1,16 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+skloop:
+  id: 1
+  firstname: skloop
+  lastname: waukee
+  uid: swaukee
+  email:
+  access: 2
+
+teacher:
+  firstname: teacher
+  lastname: waukee
+  uid: twaukee
+  email: twaukee@waukee.k12.ia.us
+  access: 1

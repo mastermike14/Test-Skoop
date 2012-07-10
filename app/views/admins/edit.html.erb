@@ -1,0 +1,25 @@
+<div id="index">
+ <% if flash[:notice] -%>
+     <div id="notice"><%= flash[:notice] %></div>
+      <% end -%>
+<h1>Editing group</h1>
+
+<% form_for @admin, :url => admins_group_update_path(@admin.name) do |f| %>
+  <%= f.error_messages %>
+
+ <p>Twitter Name:  <b> <%= @admin.name %> </b>
+ </p>
+ <br />
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :desc %>
+  </p>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'show', admin_profile_url(@admin.name) %> |
+<%= link_to 'admin', admins_path %>
+</div>

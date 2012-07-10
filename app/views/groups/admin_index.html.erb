@@ -1,0 +1,48 @@
+<div id="index">
+<%= display_flash %>
+<div id="body">
+	<div id="hpk">
+<h1>Listing groups</h1>
+
+<% if own_groups.length > 0 %>
+<table font="arial,Times New Roman" text-size="12px/14px">
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Action</th>
+  </tr>
+<% own_groups.each do |admins| %>
+  <tr>
+    <td><%=h admins.name %></td>
+    <td><%=h admins.desc %></td>
+    <td><%= link_to 'Show', admin_profile_path(admins.name) %></td>
+    <td><%= link_to 'Edit', admin_group_edit_path(admins.name) %></td>
+    <td><%= link_to 'Message', messages_admin_url(admins.id) %></td>
+    <td><%= link_to 'Destroy', admins, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+     <tr>
+      <td>
+         <div id="digg"> 
+          <%= will_paginate own_groups %>
+         </div>
+       </td>
+      </tr>
+<% else %>
+<p>You have not created any groups yet!</p>
+<% end %>
+</table>
+</div>
+<div id="hpm">
+<h1>Create a group</h1>
+<%= error_messages_for :admin %>
+<% form_for @admin do |f| %>
+    <%= label_tag :name, "Twitter Account Name:" %><br />
+    <%= f.text_field :name, :size => 25 %><br />
+    <%= label_tag :desc, "Description:" %><br />
+    <%= f.text_field :desc, :size => 25 %><br />
+    <%= f.submit 'Create' %>
+<% end %><br /><br /><br /><br />
+</div>
+</div>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+Jacob:
+  username: waukee_ninja
+  firstname: waukee
+  lastname: warriors
+  email: test@test.ing
+  uid: jacob
+  atoken: a
+  asecret: b
+
+Matt:
+  username: 
+  firstname: Matt
+  lastname: Waukee
+  email: test@abcdefg.hij
+  uid: test
+  atoken:
+  asecret:

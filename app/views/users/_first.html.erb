@@ -1,0 +1,12 @@
+<h4>Welcome to Skloop, click next to begin registration!</h4>
+
+Please be aware that you will have to give some private information to us in order for this service to work.
+Any information you supply us will not be sold or shared in anyway.  Only your Twitter Account name will be shared with Twitter.com.
+Also when signing up for groups your Twitter name will not be given to anyone.  Only your Name is shown to the Staff member that controls
+that specific group.  However, all other information is private.
+<% form_tag :new_user do %>
+	<%=error_messages_for :user %>
+<%= hidden_field_tag :agree, "yes" %>
+<%= hidden_field_tag :direction, "next" %>
+<%= submit_tag "Next" %>
+<% end %>

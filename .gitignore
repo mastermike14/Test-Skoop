@@ -1,0 +1,6 @@
+log/*
+*~
+config/database.yml
+*.pid
+*.swp
+lib/construction/*

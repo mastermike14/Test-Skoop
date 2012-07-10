@@ -1,0 +1,10 @@
+
+<% form_for @user, :url => {:action => 'create'} do |u| %>
+	<%=error_messages_for :user %>
+<%= hidden_field_tag :direction, "next" %>
+<%= label_tag :email, "Email:" %><br />
+<%= u.text_field :email %><br />
+<%= button_to_function "Previous",
+  "document.getElementById('direction').value = 'previous'; this.form.submit();" %>
+<%= submit_tag "Next" %>
+<% end %>

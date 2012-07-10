@@ -1,0 +1,8 @@
+Thank you for registering for Skloop!<br />
+When you click finish registration will redirect you to Twitter to login, and verify Skloop as a trustworthy application.
+<% form_for @user, :url => {:action => 'update'} do |f| %>
+<%= hidden_field_tag :direction, "register" %>
+<%= label_tag :username, "Username:" %><br />
+<%= f.text_field :username %>
+<%= submit_tag "Finish" %>
+<% end %>
